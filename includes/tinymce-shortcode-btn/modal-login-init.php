@@ -1,7 +1,11 @@
 <?php
 
 	/**
-	 * 
+	 * Handles the tinyMCE button.
+	 *
+	 * This contains all the cool jazz that makes this plugin work within the post editor..
+	 *
+	 * @version 2.1a-092913
 	 */
 	class Geissinger_Add_WP_Modal_Shortcode {
 

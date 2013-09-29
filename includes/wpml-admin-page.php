@@ -4,6 +4,7 @@
 	 * Creates the admin menu for our WP Modal Login page.
 	 *
 	 * TODO: Update code to OOP, for whatever reason, containing all of this into a PHP class has proven to cause errors??
+	 * @version 2.1a-092913
 	 */
 
 	/**
@@ -16,7 +17,7 @@
 	 * @since 2.0
 	 */
 	function geissinger_admin_resources() {
-		wp_enqueue_script( 'wpml-admin-script', plugins_url( 'js/wp-modal-login-admin.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '2.0.5', true );
+		wp_enqueue_script( 'wpml-admin-script', plugins_url( 'js/wp-modal-login-admin.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '2.1a-092913', true );
 	}
 
 
@@ -254,4 +255,44 @@
 
 		return apply_filters( 'geissinger_wpml_options_sanitize', $output, $input );
 	}
+
+
+	/**
+	 * Add our WPML nav meta box to the menus section
+	 * @return void
+	 *
+	 * @version 1.0
+	 * @since   2.1
+	 */
+	function geissinger_add_wpml_nav_menu() {
+    	add_meta_box('wp_modal_nav_meta_box', __( 'WP Modal Login' ), 'geissinger_render_add_wpml_nav_menu', 'nav-menus', 'side', 'low' );
+	}
+	add_action('admin_init', 'geissinger_add_wpml_nav_menu');
+
+
+	/**
+	 * The method that adds the display area to our meta box.
+	 * FUNCTION STILL UNDER DEVELOPMENT
+	 * @return html
+	 *
+	 * @version  0.1
+	 * @since    2.1
+	 */
+	function geissinger_render_add_wpml_nav_menu() { ?>
+	    <div id="wpml-nav" class="wpmlnavdiv">
+	    	<input type="hidden" value="custom" name="menu-item[-10][menu-item-type]" />
+	    	<p id="menu-item-name-wrap">
+	    		<label class="howto" for="custom-menu-item-name">
+	    			<span>Title</span>
+	    			<input type="text" id="custom-menu-item-name" name="menu-item[-10][menu-item-title]" class="regular-text menu-item-textbox input-with-default-title" title="Title" />
+	    		</label>
+	    	</p>
+	    	<p class="button-controls">
+	    		<span class="add-to-menu">
+	    			<input type="submit" value="Add to Menu" class="button-secondary submit-add-to-menu right" id="submit-wpmlnavdiv" />
+					<span class="spinner"></span>
+	    		</span>
+	    	</p>
+	    </div>
+	<?php }
 

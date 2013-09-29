@@ -67,12 +67,22 @@ The new PHP function accepts 4 arguments, each described below in greater detail
 
 Changelog
 =========
+2.1a-092913
+-----------
+* Added - More room for customization for developers by adding a handful of apply_filter() instances throughout the plugin. These are also available via the admin area (coming soon).
+* Added - Beginning stages of the menu button to allow users to add the login link to custom nav menus.
+* Fixed - Links in modal window to disappear when viewing it's section (ie. clicking register will remove that link when the form changes).
+* Fixed - Form field selection when using tab to navigate the form fields.
+* Improvement - Beefed security by adding empty index.php files in all directories for servers that allow directory listings.
+* Improvement - Reworked Ajax login so redirect should work smoother than before.
+* Improvement - Beefed up theme styles so other themes do not interfere.
+
 2.0.6
 -----
 * Fixed permanent hang on reseting password with "Forgotten Password".
-* Fixed tabbing in forms so they actually move your cursor in the proper order.
-* Fixed some minor display issues within the widget.
 * Increased security in multiple areas of the plugin.
+* Fixed tabbing in forms so they actually move your cursor in the proper order.
+
 
 2.0.5.2
 -------
