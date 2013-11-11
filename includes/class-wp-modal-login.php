@@ -324,7 +324,7 @@
 			$message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
 			$message .= __( 'If this was a mistake, just ignore this email and nothing will happen.', 'geisinger-wpml' ) . "\r\n\r\n";
 			$message .= __( 'To reset your password, visit the following address:', 'geisinger-wpml' ) . "\r\n\r\n";
-			$message .= '<' . network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . ">\r\n";
+			$message .= network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . "\r\n";
 
 			if ( is_multisite() ) {
 				$blogname = $GLOBALS['current_site']->site_name;
@@ -370,16 +370,16 @@
 			$multisite_reg = get_site_option( 'registration' );
 
 			// Setup filterable titles
-			$login_title     	  = apply_filters( 'geissinger_login_title', __( 'Login', 'geissinger-wpml' ) );
-			$register_title  	  = apply_filters( 'geissinger_register_title', __( 'Register', 'geissinger-wpml' ) );
-			$forgotten_title 	  = apply_filters( 'geissinger_forgotten_title', __( 'Forgotten Password?', 'geissinger-wpml' ) );
+			$login_title       = apply_filters( 'geissinger_login_title', __( 'Login', 'geissinger-wpml' ) );
+			$register_title    = apply_filters( 'geissinger_register_title', __( 'Register', 'geissinger-wpml' ) );
+			$forgotten_title   = apply_filters( 'geissinger_forgotten_title', __( 'Forgotten Password?', 'geissinger-wpml' ) );
 
 			// Setup filterable form labels
-			$username_label  	  = apply_filters( 'geissinger_username_label', __( 'Username', 'geissinger-wpml' ) );
-			$password_label  	  = apply_filters( 'geissinger_password_label', __( 'Password', 'geissinger-wpml' ) );
-			$email_label	  	  = apply_filters( 'geissinger_email_label', __( 'Log In', 'geissinger-wpml' ) );
-			$user_email_label   = apply_filters( 'geissinger_user_email_label', __( 'Username or Email', 'geissinger-wpml' ) );
-			$remember_label  	  = apply_filters( 'geissinger_remember_label', __( 'Remember Me', 'geissinger-wpml' ) );
+			$username_label    = apply_filters( 'geissinger_username_label', __( 'Username', 'geissinger-wpml' ) );
+			$password_label    = apply_filters( 'geissinger_password_label', __( 'Password', 'geissinger-wpml' ) );
+			$email_label	   = apply_filters( 'geissinger_email_label', __( 'Log In', 'geissinger-wpml' ) );
+			$user_email_label  = apply_filters( 'geissinger_user_email_label', __( 'Username or Email', 'geissinger-wpml' ) );
+			$remember_label    = apply_filters( 'geissinger_remember_label', __( 'Remember Me', 'geissinger-wpml' ) );
 
 			// Setup filterable form buttons
 			$login_btn_text     = apply_filters( 'geissinger_login_btn_text', __( 'Log In', 'geissinger-wpml' ) );
@@ -391,7 +391,7 @@
 
 				<?php do_action( 'before_wpml_title' ); ?>
 
-				<?php if( ! $user_ID ) : ?>
+				<?php if ( ! $user_ID ) : ?>
 					<div class="section-container">
 
 						<?php // Login Form ?>
@@ -607,7 +607,7 @@
 				if ( $show_admin )
 					$link .= ' | <a href="' . esc_url( admin_url() ) . '">' . esc_attr( $view_admin ) . '</a>';
 			} else {
-				$link = '<a href="#login-box" class="login wpml-btn login-window' . $login_class . '">' . sprintf( _x( '%s', 'Login Text', 'geissinger-wpml' ), sanitize_text_field( $login_text ) ) . '</a></li>';
+				$link = '<a href="#login-box" class="login wpml-btn login-window' . $login_class . '">' . sprintf( _x( '%s', 'Login Text', 'geissinger-wpml' ), sanitize_text_field( $login_text ) ) . '</a>';
 			}
 
 			return $link;
@@ -636,7 +636,7 @@
 			if ( is_user_logged_in() ) {
 				$link = '<a href="' . wp_logout_url( esc_url( $logout_url ) ) . '" class="logout wpml-btn ' . $login_class . '">' . sprintf( _x( '%s', 'Shortcode Logout Text', 'geissinger-wpml' ), sanitize_text_field( $logout_text ) ) . '</a>';
 			} else {
-				$link = '<a href="#login-box" class="login wpml-btn login-window ' . $logout_class . '">' . sprintf( _x( '%s', 'Shortcode Login Text', 'geissinger-wpml' ), sanitize_text_field( $login_text ) ) . '</a></li>';
+				$link = '<a href="#login-box" class="login wpml-btn login-window ' . $logout_class . '">' . sprintf( _x( '%s', 'Shortcode Login Text', 'geissinger-wpml' ), sanitize_text_field( $login_text ) ) . '</a>';
 			}
 
 			return $link;
