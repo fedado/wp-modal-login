@@ -5,7 +5,7 @@
 	 *
 	 * This contains all the cool jazz that makes this plugin work within the post editor..
 	 *
-	 * @version 2.1a-092913
+	 * @version 2.1a-111013
 	 */
 	class Geissinger_Add_WP_Modal_Shortcode {
 

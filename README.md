@@ -67,7 +67,7 @@ The new PHP function accepts 4 arguments, each described below in greater detail
 
 Changelog
 =========
-2.1a-092913
+2.1a-111013
 -----------
 * Added - More room for customization for developers by adding a handful of apply_filter() instances throughout the plugin. These are also available via the admin area (coming soon).
 * Added - Beginning stages of the menu button to allow users to add the login link to custom nav menus.
@@ -76,6 +76,7 @@ Changelog
 * Improvement - Beefed security by adding empty index.php files in all directories for servers that allow directory listings.
 * Improvement - Reworked Ajax login so redirect should work smoother than before.
 * Improvement - Beefed up theme styles so other themes do not interfere.
+* Deprecated - 'wpml_redirect_to' filter has been deprecated in favor of 'geissinger_localized_info'.
 
 2.0.6
 -----

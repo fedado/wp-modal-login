@@ -4,7 +4,7 @@
 	 * Creates the admin menu for our WP Modal Login page.
 	 *
 	 * TODO: Update code to OOP, for whatever reason, containing all of this into a PHP class has proven to cause errors??
-	 * @version 2.1a-092913
+	 * @version 2.1a-111013
 	 */
 
 	/**
@@ -17,7 +17,7 @@
 	 * @since 2.0
 	 */
 	function geissinger_admin_resources() {
-		wp_enqueue_script( 'wpml-admin-script', plugins_url( 'js/wp-modal-login-admin.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '2.1a-092913', true );
+		wp_enqueue_script( 'wpml-admin-script', plugins_url( 'js/wp-modal-login-admin.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '2.1a-111013', true );
 	}
 
 
